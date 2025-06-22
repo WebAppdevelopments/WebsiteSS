@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Apps - S.S Pvt. Ltd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a',
+            accent: '#38bdf8',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-primary text-white font-sans">
+
+  <header class="bg-primary p-4 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-accent">← S.S Pvt. Ltd</a>
+      <nav class="space-x-6">
+        <a href="index.html#services" class="hover:text-accent">Services</a>
+        <a href="index.html#projects" class="hover:text-accent">Projects</a>
+        <a href="index.html#contact" class="hover:text-accent">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="relative">
+    <!-- <img src="https://source.unsplash.com/1600x500/?mobile,apps" alt="Mobile Apps Banner" class="w-full h-[300px] object-cover brightness-75"> -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-accent">Mobile App Development</h1>
+      <p class="text-lg text-gray-300 mt-2 px-4">Building powerful mobile experiences for Android and iOS.</p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold text-accent mb-4">What We Deliver</h2>
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+      We develop cross-platform mobile apps that are fast, intuitive, and built to scale. From design to deployment, we deliver robust mobile experiences.
+    </p>
+  </section>
+
+  <!-- Features -->
+  <section class="py-12 px-6 bg-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-2xl font-bold text-center text-accent mb-10">Why Choose Us</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="w-16 mb-4" alt="Android" />
+          <h4 class="text-xl font-bold mb-2">Android & iOS</h4>
+          <p class="text-gray-300">We build apps for both Android and iOS using Flutter and React Native.</p>
+        </div>
+        <div class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="w-16 mb-4" alt="Performance" />
+          <h4 class="text-xl font-bold mb-2">High Performance</h4>
+          <p class="text-gray-300">Optimized for speed, battery, and seamless user experience.</p>
+        </div>
+        <div class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" class="w-16 mb-4" alt="Secure" />
+          <h4 class="text-xl font-bold mb-2">Secure Integration</h4>
+          <p class="text-gray-300">We implement secure authentication, encryption, and API integrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="py-12 px-6">
+    <div class="text-center max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold text-accent mb-6">Tech Stack</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="bg-slate-700 px-4 py-2 rounded-full">Flutter</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">React Native</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">Firebase</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">REST API</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">SQLite</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">Push Notifications</span>
+        <span class="bg-slate-700 px-4 py-2 rounded-full">Secure Auth</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 p-6 text-center text-gray-400">
+    © 2025 S.S Pvt. Ltd. All rights reserved.
+  </footer>
+
+</body>
+</html>

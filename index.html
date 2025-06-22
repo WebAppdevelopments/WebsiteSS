@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.S Pvt. Ltd - Software Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a',
+            accent: '#38bdf8',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-primary text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-primary p-4 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-accent">S.S Pvt. Ltd</h1>
+      <nav class="space-x-6">
+      <!-- <a href="#services" class="hover:text-accent">Services</a> -->
+        <!-- <a href="#projects" class="hover:text-accent">Projects</a> -->
+        <!-- <a href="#contact" class="hover:text-accent">Contact</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-primary to-slate-800">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">We Build Future-Ready Software</h2>
+    <p class="text-lg text-gray-300 mb-6">From concept to code, we deliver reliable digital products.</p>
+    <a href="#contact" class="bg-accent text-primary px-6 py-3 rounded-full font-semibold hover:bg-white">Get in Touch</a>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-accent">Our Services</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="web-development.html" class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition block text-left">
+          <h4 class="text-xl font-bold mb-2">Web Development</h4>
+          <p class="text-gray-300">Responsive and scalable web applications built with modern tech stacks.</p>
+        </a>
+        <a href="mobile-app.html" class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition block text-left">
+          <h4 class="text-xl font-bold mb-2">Mobile Apps</h4>
+          <p class="text-gray-300">Cross-platform mobile apps for Android & iOS using Flutter and React Native.</p>
+        </a>
+        <a href="design.html" class="bg-slate-700 p-6 rounded-xl hover:scale-105 transition block text-left">
+          <h4 class="text-xl font-bold mb-2">UI/UX Design</h4>
+          <p class="text-gray-300">User-centric and visually engaging interface design to enhance user experience.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 bg-slate-800 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-accent">Our Projects</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-700 p-4 rounded-xl">
+          <h4 class="text-xl font-bold mb-2">Inventory System</h4>
+          <p class="text-gray-300">Built for a retail chain to manage stocks across 100+ stores.</p>
+        </div>
+        <div class="bg-slate-700 p-4 rounded-xl">
+          <h4 class="text-xl font-bold mb-2">E-Learning Platform</h4>
+          <p class="text-gray-300">Interactive LMS used by 20,000+ students and educators.</p>
+        </div>
+        <div class="bg-slate-700 p-4 rounded-xl">
+          <h4 class="text-xl font-bold mb-2">Payment Gateway</h4>
+          <p class="text-gray-300">Secure, real-time payment processing for ecommerce businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-accent">Contact Us</h3>
+      <form class="max-w-xl mx-auto space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <input type="email" placeholder="Email" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <textarea rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-slate-700 text-white" required></textarea>
+        <button type="submit" class="bg-accent text-primary px-6 py-3 rounded-full hover:bg-white font-semibold">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Floating Right Sidebar -->
+  <div class="fixed top-1/3 right-0 z-50 space-y-4 p-2">
+    <button onclick="toggleInfo('contact')" class="bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Contact</button>
+    <a href="#services" class="block bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Services</a>
+    <a href="#projects" class="block bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Projects</a>
+  </div>
+
+  <!-- Contact Info Popup -->
+  <div id="contactInfo" class="hidden fixed bottom-10 right-10 bg-slate-800 text-white p-4 rounded-xl shadow-lg w-[260px] z-50">
+    <div class="flex justify-between items-center mb-2">
+      <h4 class="text-lg font-semibold text-accent">Contact Info</h4>
+      <button onclick="toggleInfo('contact')" class="text-gray-400 hover:text-red-400 text-sm">✖</button>
+    </div>
+    <p class="text-sm">📧 Email: <span class="text-accent">sumitkr1681@gmail.com</span></p>
+    <p class="text-sm mt-1">📱 Mobile: <span class="text-accent">7632858206</span></p>
+  </div>
+
+  <!-- Script to Toggle Contact Info -->
+  <script>
+    function toggleInfo(id) {
+      const el = document.getElementById(id + 'Info');
+      el.classList.toggle('hidden');
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 p-6 text-center text-gray-400">
+    © 2025 S.S Pvt. Ltd. All rights reserved.
+  </footer>
+
+</body>
+</html>
