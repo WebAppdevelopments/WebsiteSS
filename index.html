@@ -20,13 +20,13 @@
 </head>
 <body class="bg-primary text-white font-sans">
 
-  <!-- ✅ Navbar -->
+  <!-- ✅ Navbar with Logo -->
   <header class="bg-primary p-4 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <img src="https://github.com/WebAppdevelopments/WebsiteSS/blob/main/logo.png" />
+      <a href="index.html" class="flex items-center space-x-3">
+        <img src="https://raw.githubusercontent.com/WebAppdevelopments/WebsiteSS/main/logo.png" alt="S.S Pvt. Ltd Logo" class="w-10 h-10 rounded-full object-cover">
         <h1 class="text-2xl font-bold text-accent">S.S Pvt. Ltd</h1>
-      </div>
+      </a>
       <nav class="space-x-6 hidden md:block">
         <a href="#services" class="hover:text-accent">Services</a>
         <a href="#projects" class="hover:text-accent">Projects</a>
@@ -35,9 +35,9 @@
     </div>
   </header>
 
-  <!-- ✅ Hero Section -->
+  <!-- ✅ Hero Section with Unsplash Banner -->
   <section class="relative h-[400px]">
-    <img id="hero-banner" src="" alt="Banner" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <img id="hero-banner" src="" alt="Technology Banner" class="absolute inset-0 w-full h-full object-cover brightness-75" />
     <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
       <h2 class="text-4xl md:text-6xl font-bold text-accent">We Build Future-Ready Software</h2>
       <p class="text-lg text-gray-300 mt-4 mb-6 max-w-2xl">From concept to code, we deliver reliable digital products for startups and enterprises.</p>
@@ -91,27 +91,14 @@
   <section id="contact" class="py-16 px-6">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10 text-accent">Contact Us</h3>
-      <form onsubmit="sendEmail(event)" class="max-w-xl mx-auto space-y-4">
-        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded bg-slate-700 text-white" required />
-        <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded bg-slate-700 text-white" required />
-        <textarea id="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-slate-700 text-white" required></textarea>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-xl mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-slate-700 text-white" required></textarea>
         <button type="submit" class="bg-accent text-primary px-6 py-3 rounded-full hover:bg-white font-semibold">Send Message</button>
       </form>
-
-      <!-- ✅ Success Message -->
-      <div id="successMsg" class="hidden mt-6 text-green-400 text-lg flex items-center justify-center gap-2">
-        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-        </svg>
-        Message opened in your email app!
-      </div>
-
-      <!-- ✅ Contact Info -->
-      <div class="mt-6 text-sm text-gray-400">
-         <p class="text-sm">📧 Email: <a href="mailto:sumitkr1681@gmail.com" class="text-accent hover:underline">sumitkr1681@gmail.com</a></p>
-    <p class="text-sm mt-1">📱 Mobile: <span class="text-accent">7632858206</span></p>
-    🔗 LinkedIn: <a href="https://www.linkedin.com/in/sumit-kumar-8a6941360" target="_blank" class="text-accent hover:underline">Connect on LinkedIn</a>
-      </div>
+      <p class="text-sm text-gray-400 mt-4">📧 Email: <a href="mailto:sumitkr1681@gmail.com" class="text-accent hover:underline">sumitkr1681@gmail.com</a></p>
+      <p class="text-sm text-gray-400">🔗 LinkedIn: <a href="https://www.linkedin.com/in/sumit-kumar-8a6941360" target="_blank" class="text-accent hover:underline">Visit Profile</a></p>
     </div>
   </section>
 
@@ -120,10 +107,9 @@
     © 2025 S.S Pvt. Ltd. All rights reserved.
   </footer>
 
-  <!-- ✅ Script -->
+  <!-- ✅ JavaScript for banner -->
   <script>
     const accessKey = "3HAwOTG5ueeoBxGt67NPUl2_117EGLCM2j-Mh_pxAA0";
-
     async function loadBanner() {
       try {
         const res = await fetch(`https://api.unsplash.com/photos/random?query=technology&orientation=landscape&client_id=${accessKey}`);
@@ -133,24 +119,6 @@
         document.getElementById("hero-banner").src = "https://source.unsplash.com/1600x500/?technology";
       }
     }
-
-    function sendEmail(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const from = document.getElementById("email").value;
-      const msg = document.getElementById("message").value;
-
-      const subject = `New message from ${name}`;
-      const body = `Name: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`;
-      window.location.href = `mailto:sumitkr1681@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      document.getElementById("successMsg").classList.remove("hidden");
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("message").value = "";
-    }
-
     window.onload = loadBanner;
   </script>
 
