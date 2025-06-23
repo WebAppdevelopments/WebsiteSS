@@ -20,26 +20,32 @@
 </head>
 <body class="bg-primary text-white font-sans">
 
-  <!-- Navbar -->
+  <!-- ✅ Navbar -->
   <header class="bg-primary p-4 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-accent">S.S Pvt. Ltd</h1>
-      <nav class="space-x-6">
-      <!-- <a href="#services" class="hover:text-accent">Services</a> -->
-        <!-- <a href="#projects" class="hover:text-accent">Projects</a> -->
-        <!-- <a href="#contact" class="hover:text-accent">Contact</a> -->
+      <div class="flex items-center space-x-3">
+        <img src="images/logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover" />
+        <h1 class="text-2xl font-bold text-accent">S.S Pvt. Ltd</h1>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#services" class="hover:text-accent">Services</a>
+        <a href="#projects" class="hover:text-accent">Projects</a>
+        <a href="#contact" class="hover:text-accent">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-r from-primary to-slate-800">
-    <h2 class="text-4xl md:text-6xl font-bold mb-4">We Build Future-Ready Software</h2>
-    <p class="text-lg text-gray-300 mb-6">From concept to code, we deliver reliable digital products.</p>
-    <a href="#contact" class="bg-accent text-primary px-6 py-3 rounded-full font-semibold hover:bg-white">Get in Touch</a>
+  <!-- ✅ Hero Section -->
+  <section class="relative h-[400px]">
+    <img id="hero-banner" src="" alt="Banner" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+      <h2 class="text-4xl md:text-6xl font-bold text-accent">We Build Future-Ready Software</h2>
+      <p class="text-lg text-gray-300 mt-4 mb-6 max-w-2xl">From concept to code, we deliver reliable digital products for startups and enterprises.</p>
+      <a href="#contact" class="bg-accent text-primary px-6 py-3 rounded-full font-semibold hover:bg-white">Get in Touch</a>
+    </div>
   </section>
 
-  <!-- Services -->
+  <!-- ✅ Services Section -->
   <section id="services" class="py-16 px-6">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10 text-accent">Our Services</h3>
@@ -60,7 +66,7 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- ✅ Projects Section -->
   <section id="projects" class="py-16 bg-slate-800 px-6">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10 text-accent">Our Projects</h3>
@@ -81,48 +87,72 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- ✅ Contact Section -->
   <section id="contact" class="py-16 px-6">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10 text-accent">Contact Us</h3>
-      <form class="max-w-xl mx-auto space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-slate-700 text-white" required />
-        <input type="email" placeholder="Email" class="w-full p-3 rounded bg-slate-700 text-white" required />
-        <textarea rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-slate-700 text-white" required></textarea>
+      <form onsubmit="sendEmail(event)" class="max-w-xl mx-auto space-y-4">
+        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded bg-slate-700 text-white" required />
+        <textarea id="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-slate-700 text-white" required></textarea>
         <button type="submit" class="bg-accent text-primary px-6 py-3 rounded-full hover:bg-white font-semibold">Send Message</button>
       </form>
+
+      <!-- ✅ Success Message -->
+      <div id="successMsg" class="hidden mt-6 text-green-400 text-lg flex items-center justify-center gap-2">
+        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        Message opened in your email app!
+      </div>
+
+      <!-- ✅ Contact Info -->
+      <div class="mt-6 text-sm text-gray-400">
+         <p class="text-sm">📧 Email: <a href="mailto:sumitkr1681@gmail.com" class="text-accent hover:underline">sumitkr1681@gmail.com</a></p>
+    <p class="text-sm mt-1">📱 Mobile: <span class="text-accent">7632858206</span></p>
+    🔗 LinkedIn: <a href="https://www.linkedin.com/in/sumit-kumar-8a6941360" target="_blank" class="text-accent hover:underline">Connect on LinkedIn</a>
+      </div>
     </div>
   </section>
 
-  <!-- Floating Right Sidebar -->
-  <div class="fixed top-1/3 right-0 z-50 space-y-4 p-2">
-    <button onclick="toggleInfo('contact')" class="bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Contact</button>
-    <a href="#services" class="block bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Services</a>
-    <a href="#projects" class="block bg-accent text-primary px-4 py-2 rounded-l-full shadow hover:bg-white font-semibold">Projects</a>
-  </div>
-
-  <!-- Contact Info Popup -->
-  <div id="contactInfo" class="hidden fixed bottom-10 right-10 bg-slate-800 text-white p-4 rounded-xl shadow-lg w-[260px] z-50">
-    <div class="flex justify-between items-center mb-2">
-      <h4 class="text-lg font-semibold text-accent">Contact Info</h4>
-      <button onclick="toggleInfo('contact')" class="text-gray-400 hover:text-red-400 text-sm">✖</button>
-    </div>
-    <p class="text-sm">📧 Email: <span class="text-accent">sumitkr1681@gmail.com</span></p>
-    <p class="text-sm mt-1">📱 Mobile: <span class="text-accent">7632858206</span></p>
-  </div>
-
-  <!-- Script to Toggle Contact Info -->
-  <script>
-    function toggleInfo(id) {
-      const el = document.getElementById(id + 'Info');
-      el.classList.toggle('hidden');
-    }
-  </script>
-
-  <!-- Footer -->
+  <!-- ✅ Footer -->
   <footer class="bg-slate-900 p-6 text-center text-gray-400">
     © 2025 S.S Pvt. Ltd. All rights reserved.
   </footer>
+
+  <!-- ✅ Script -->
+  <script>
+    const accessKey = "3HAwOTG5ueeoBxGt67NPUl2_117EGLCM2j-Mh_pxAA0";
+
+    async function loadBanner() {
+      try {
+        const res = await fetch(`https://api.unsplash.com/photos/random?query=technology&orientation=landscape&client_id=${accessKey}`);
+        const data = await res.json();
+        document.getElementById("hero-banner").src = data.urls.regular;
+      } catch {
+        document.getElementById("hero-banner").src = "https://source.unsplash.com/1600x500/?technology";
+      }
+    }
+
+    function sendEmail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const from = document.getElementById("email").value;
+      const msg = document.getElementById("message").value;
+
+      const subject = `New message from ${name}`;
+      const body = `Name: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`;
+      window.location.href = `mailto:sumitkr1681@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      document.getElementById("successMsg").classList.remove("hidden");
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    }
+
+    window.onload = loadBanner;
+  </script>
 
 </body>
 </html>
